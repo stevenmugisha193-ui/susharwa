@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>susha.com</title>
+    <!-- Favicon -->
+    <link rel="icon" href="education-logo-open-book-dictionary-textbook-or-notebook-with-sunrice-icon-modern-emblem-idea-concept-design-for-business-libraries-schools-universities-educational-courses-vector.jpg" type="image/png">
+    <!-- cyangwa niba png -->
+    <!-- <link rel="icon" href="favicon.png" type="image/png"> -->
+    <style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("students.jpg") no-repeat center center/cover;
+    height: 100vh;
+}
+
+
+.overlay {
+    background: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box {
+    background: rgb(66, 109, 201);
+    padding: 30px;
+    width: 320px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.form-box h2 {
+    margin-bottom: 20px;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-box button {
+    width: 100%;
+    padding: 10px;
+    background: #00cc22;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-box button:hover {
+    background:#149708; 
+}
+
+.link {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.link a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#message {
+    margin-top: 10px;
+    color: red;
+}
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.logo span {
+    font-family: 'Pacifico', cursive;
+    font-size: 26px;
+    color: white;
+}
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3;
+}
+
+/* Dark overlay for readability */
+.overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+.site-footer {
+    position: fixed;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
+    z-index: 5;
+}
+.form-box h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    font-style: italic;
+}
+/* Links under the form */
+.form-box .link a {
+    color: #00ffff;       /* Change to any color you like */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease;
+}
+
+.form-box .link a:hover {
+    color: #ffcc00;       /* Hover color */
+    text-decoration: underline; /* Optional: underline on hover */
+}
+
+</style>
+</head>
+<body>
+    <video class="video-bg" autoplay muted loop playsinline>
+    <source src="students.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+</video>
+<div class="logo">
+    <img src="smith.jpg" alt="Susha Logo">
+    <span>Susha</span>
+</div>
+<div class="overlay">
+    <div class="form-box">
+        <h2 id="formTitle">Welcome to susha</h2>
+        <!-- Navigation Bar -->
+<nav class="navbar">
+</nav>
+
+        <!-- LOGIN FORM -->
+        <form id="loginForm">
+            <input type="text" id="loginUser" placeholder="Username" required>
+            <input type="password" id="loginPass" placeholder="Password" required>
+
+            <button type="submit"> <a href="dashboard.html" target="_blank">Login</a></button>
+
+            <p class="link">
+                <a href="forget.html" target="_blank">Forgot password?</a>
+            </p>
+            <p class="link">
+                Don’t have an account?
+                <a href="signup.html" target="_blank" onclick="showSignup()">Sign up</a>
+            </p>
+        </form>
+
+        <!-- SIGN UP FORM -->
+        <form id="signupForm" class="hidden">
+            <input type="text" placeholder="Full Name" required>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+
+            <button type="submit">Sign Up</button>
+
+            <p class="link">
+                Already have an account?
+                <a href="#" onclick="showLogin()">Login</a>
+            </p>
+        </form>
+
+        <!-- FORGOT PASSWORD -->
+        <form id="forgotForm" class="hidden">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Reset Password</button>
+
+            <p class="link">
+                <a href="#" onclick="showLogin()">Back to Login</a>
+            </p>
+        </form>
+
+        <p id="message"></p>
+    </div>
+</div>
+
+<script src="script.js">function showSignup() {
+    hideAll();
+    document.getElementById("signupForm").classList.remove("hidden");
+    document.getElementById("formTitle").innerText = "Sign Up";
+}
+
+function showLogin() {
+    hideAll();
+    document.getElementById("loginForm").classList.remove("hidden");
+    document.getElementById("formTitle").innerText = "Login";
+}
+
+function showForgot() {
+    hideAll();
+    document.getElementById("forgotForm").classList.remove("hidden");
+    document.getElementById("formTitle").innerText = "Forgot Password";
+}
+
+function hideAll() {
+    document.getElementById("loginForm").classList.add("hidden");
+    document.getElementById("signupForm").classList.add("hidden");
+    document.getElementById("forgotForm").classList.add("hidden");
+    document.getElementById("message").innerText = "";
+}
+
+// Demo login logic
+document.getElementById("loginForm").onsubmit = function (e) {
+    e.preventDefault();
+
+    let user = document.getElementById("loginUser").value;
+    let pass = document.getElementById("loginPass").value;
+
+    if (user === "student" && pass === "1234") {
+        document.getElementById("message").style.color = "green";
+        document.getElementById("message").innerText = "Login successful!";
+    } else {
+        document.getElementById("message").style.color = "red";
+        document.getElementById("message").innerText = "Wrong username or password";
+    }
+};
+</script>
+</body>
+    <footer class="site-footer">
+    &copy2025 Susha • All Rights Reserved|prepared by M.steven
+</footer>
+</html>
